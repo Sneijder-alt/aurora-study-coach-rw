@@ -1,0 +1,15 @@
+﻿# Vercel helper
+vercel-deploy.json
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Python
+.venv/
+__pycache__/
+
+# Env
+.env
+.env.*

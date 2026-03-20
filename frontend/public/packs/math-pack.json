@@ -1,0 +1,269 @@
+﻿{
+  "subject": "Mathematics",
+  "grade": "11",
+  "language": ["en", "rw"],
+  "topics": [
+    {
+      "id": "linear-equations",
+      "title_en": "Linear Equations",
+      "title_rw": "Imibare y'Imirongo (Linear Equations)",
+      "notes_en": "Solve by isolating x using inverse operations. Keep both sides balanced.",
+      "notes_rw": "Kemuye x ukoresheje ibikorwa bihindura; ukomeze kuringaniza impande zombi.",
+      "misconceptions_en": "Changing signs incorrectly or dividing only one side.",
+      "misconceptions_rw": "Guhindura ibimenyetso nabi cyangwa kugabanya uruhande rumwe gusa.",
+      "questions": [
+        {
+          "id": "le-1",
+          "type": "mcq",
+          "prompt_en": "Solve: 2x + 3 = 11",
+          "prompt_rw": "Kemuye: 2x + 3 = 11",
+          "choices": ["x=3", "x=4", "x=5", "x=6"],
+          "answer": "x=4",
+          "explanation_en": "Subtract 3 from both sides: 2x=8. Divide by 2: x=4.",
+          "explanation_rw": "Kuraho 3 ku mpande zombi: 2x=8. Gabanya na 2: x=4.",
+          "difficulty": 0.8,
+          "concept": "isolate x"
+        },
+        {
+          "id": "le-2",
+          "type": "mcq",
+          "prompt_en": "Solve: 5x - 10 = 0",
+          "prompt_rw": "Kemuye: 5x - 10 = 0",
+          "choices": ["x=1", "x=2", "x=3", "x=4"],
+          "answer": "x=2",
+          "explanation_en": "Add 10: 5x=10. Divide by 5: x=2.",
+          "explanation_rw": "Ongeraho 10: 5x=10. Gabanya na 5: x=2.",
+          "difficulty": 0.8,
+          "concept": "isolate x"
+        },
+        {
+          "id": "le-3",
+          "type": "mcq",
+          "prompt_en": "Solve: 3x + 6 = 2x + 11",
+          "prompt_rw": "Kemuye: 3x + 6 = 2x + 11",
+          "choices": ["x=4", "x=5", "x=6", "x=7"],
+          "answer": "x=5",
+          "explanation_en": "Subtract 2x: x + 6 = 11. Subtract 6: x=5.",
+          "explanation_rw": "Kuraho 2x: x + 6 = 11. Kuraho 6: x=5.",
+          "difficulty": 1.0,
+          "concept": "collect like terms"
+        },
+        {
+          "id": "le-4",
+          "type": "mcq",
+          "prompt_en": "Solve: 4x/3 = 8",
+          "prompt_rw": "Kemuye: 4x/3 = 8",
+          "choices": ["x=4", "x=5", "x=6", "x=8"],
+          "answer": "x=6",
+          "explanation_en": "Multiply both sides by 3: 4x=24. Divide by 4: x=6.",
+          "explanation_rw": "Kuba inshuro 3 ku mpande zombi: 4x=24. Gabanya na 4: x=6.",
+          "difficulty": 1.0,
+          "concept": "fraction equation"
+        },
+        {
+          "id": "le-5",
+          "type": "mcq",
+          "prompt_en": "Solve: 7 - 2x = 1",
+          "prompt_rw": "Kemuye: 7 - 2x = 1",
+          "choices": ["x=2", "x=3", "x=4", "x=5"],
+          "answer": "x=3",
+          "explanation_en": "Subtract 7: -2x = -6. Divide by -2: x=3.",
+          "explanation_rw": "Kuraho 7: -2x = -6. Gabanya na -2: x=3.",
+          "difficulty": 1.0,
+          "concept": "negative coefficient"
+        },
+        {
+          "id": "le-6",
+          "type": "mcq",
+          "prompt_en": "A student buys 3 pens and pays 1500 RWF total, with 300 RWF transport. Each pen costs x. Which equation is correct?",
+          "prompt_rw": "Umwana agura amakaramu 3 kandi yishyuye 1500 RWF hamwe na 300 RWF yo gutwara. Igiciro cya buri karamu ni x. Ni iyihe nyandiko ikwiye?",
+          "choices": ["3x+300=1500", "3x-300=1500", "x+300=1500", "3x+1500=300"],
+          "answer": "3x+300=1500",
+          "explanation_en": "Total cost = pen cost + transport, so 3x + 300 = 1500.",
+          "explanation_rw": "Igiciro cyose = amakaramu + gutwara, bityo 3x + 300 = 1500.",
+          "difficulty": 1.1,
+          "concept": "word equation"
+        },
+        {
+          "id": "le-7",
+          "type": "mcq",
+          "prompt_en": "Solve: -2x + 5 = 13",
+          "prompt_rw": "Kemuye: -2x + 5 = 13",
+          "choices": ["x=-4", "x=-3", "x=4", "x=3"],
+          "answer": "x=-4",
+          "explanation_en": "Subtract 5: -2x=8. Divide by -2: x=-4.",
+          "explanation_rw": "Kuraho 5: -2x=8. Gabanya na -2: x=-4.",
+          "difficulty": 1.1,
+          "concept": "negative coefficient"
+        },
+        {
+          "id": "le-8",
+          "type": "mcq",
+          "prompt_en": "Solve: 0.5x + 4 = 10",
+          "prompt_rw": "Kemuye: 0.5x + 4 = 10",
+          "choices": ["x=8", "x=10", "x=12", "x=14"],
+          "answer": "x=12",
+          "explanation_en": "Subtract 4: 0.5x=6. Divide by 0.5: x=12.",
+          "explanation_rw": "Kuraho 4: 0.5x=6. Gabanya na 0.5: x=12.",
+          "difficulty": 1.1,
+          "concept": "decimal coefficient"
+        },
+        {
+          "id": "le-9",
+          "type": "mcq",
+          "prompt_en": "Solve: 9x = 3x + 18",
+          "prompt_rw": "Kemuye: 9x = 3x + 18",
+          "choices": ["x=2", "x=3", "x=4", "x=5"],
+          "answer": "x=3",
+          "explanation_en": "Subtract 3x: 6x=18. Divide by 6: x=3.",
+          "explanation_rw": "Kuraho 3x: 6x=18. Gabanya na 6: x=3.",
+          "difficulty": 1.0,
+          "concept": "collect like terms"
+        },
+        {
+          "id": "le-10",
+          "type": "mcq",
+          "prompt_en": "Which equation is equivalent to 2(x - 3) = 10?",
+          "prompt_rw": "Ni iyihe nyandiko ingana na 2(x - 3) = 10?",
+          "choices": ["x-3=5", "x+3=5", "2x-3=10", "x-3=2"],
+          "answer": "x-3=5",
+          "explanation_en": "Divide both sides by 2: x - 3 = 5.",
+          "explanation_rw": "Gabanya impande zombi na 2: x - 3 = 5.",
+          "difficulty": 1.0,
+          "concept": "equivalent equation"
+        }
+      ]
+    },
+    {
+      "id": "quadratic-functions",
+      "title_en": "Quadratic Functions",
+      "title_rw": "Imirimo ya Quadratic (Quadratic Functions)",
+      "notes_en": "Quadratics have form ax^2+bx+c. Use factoring, completing square, or quadratic formula.",
+      "notes_rw": "Quadratic ifite isura ax^2+bx+c. Koresha factoring, completing square, cyangwa formula ya quadratic.",
+      "misconceptions_en": "Forgetting both solutions or mixing signs in the formula.",
+      "misconceptions_rw": "Kwibagirwa ibisubizo byombi cyangwa kwitiranya ibimenyetso muri formula.",
+      "questions": [
+        {
+          "id": "qf-1",
+          "type": "mcq",
+          "prompt_en": "Factor: x^2 + 5x + 6",
+          "prompt_rw": "Tandukanya: x^2 + 5x + 6",
+          "choices": ["(x+2)(x+3)", "(x-2)(x-3)", "(x+1)(x+6)", "(x+5)(x+1)"],
+          "answer": "(x+2)(x+3)",
+          "explanation_en": "Find two numbers that multiply to 6 and add to 5: 2 and 3.",
+          "explanation_rw": "Shaka imibare ibiri ikuba 6 kandi igateranya 5: 2 na 3.",
+          "difficulty": 1.0,
+          "concept": "factoring"
+        },
+        {
+          "id": "qf-2",
+          "type": "mcq",
+          "prompt_en": "Solve: x^2 - 9 = 0",
+          "prompt_rw": "Kemuye: x^2 - 9 = 0",
+          "choices": ["x=3", "x=-3", "x=3 or x=-3", "x=9"],
+          "answer": "x=3 or x=-3",
+          "explanation_en": "x^2=9, so x=±3.",
+          "explanation_rw": "x^2=9, bityo x=±3.",
+          "difficulty": 1.0,
+          "concept": "difference of squares"
+        },
+        {
+          "id": "qf-3",
+          "type": "mcq",
+          "prompt_en": "For f(x)=x^2-4x+1, what is the x-coordinate of the vertex?",
+          "prompt_rw": "Kuri f(x)=x^2-4x+1, x y'umutwe (vertex) ni iyihe?",
+          "choices": ["x=-2", "x=2", "x=4", "x=1"],
+          "answer": "x=2",
+          "explanation_en": "Vertex x = -b/(2a) = 4/2 = 2.",
+          "explanation_rw": "Vertex x = -b/(2a) = 4/2 = 2.",
+          "difficulty": 1.2,
+          "concept": "vertex formula"
+        },
+        {
+          "id": "qf-4",
+          "type": "mcq",
+          "prompt_en": "Discriminant of x^2 + 4x + 4 is:",
+          "prompt_rw": "Discriminant ya x^2 + 4x + 4 ni:",
+          "choices": ["0", "4", "8", "16"],
+          "answer": "0",
+          "explanation_en": "b^2-4ac = 4^2 - 4*1*4 = 0.",
+          "explanation_rw": "b^2-4ac = 4^2 - 4*1*4 = 0.",
+          "difficulty": 1.1,
+          "concept": "discriminant"
+        },
+        {
+          "id": "qf-5",
+          "type": "mcq",
+          "prompt_en": "Solve: x^2 + 3x = 0",
+          "prompt_rw": "Kemuye: x^2 + 3x = 0",
+          "choices": ["x=0", "x=-3", "x=0 or x=-3", "x=3"],
+          "answer": "x=0 or x=-3",
+          "explanation_en": "Factor: x(x+3)=0, so x=0 or x=-3.",
+          "explanation_rw": "Factor: x(x+3)=0, bityo x=0 cyangwa x=-3.",
+          "difficulty": 1.0,
+          "concept": "factoring"
+        },
+        {
+          "id": "qf-6",
+          "type": "mcq",
+          "prompt_en": "Quadratic formula for ax^2+bx+c=0 is:",
+          "prompt_rw": "Formula ya quadratic kuri ax^2+bx+c=0 ni:",
+          "choices": ["x = (-b ± √(b^2-4ac))/(2a)", "x = (-b ± √(b^2+4ac))/(2a)", "x = (b ± √(b^2-4ac))/(2a)", "x = -b/a"],
+          "answer": "x = (-b ± √(b^2-4ac))/(2a)",
+          "explanation_en": "This is the standard quadratic formula.",
+          "explanation_rw": "Iyi ni formula izwi ya quadratic.",
+          "difficulty": 1.2,
+          "concept": "quadratic formula"
+        },
+        {
+          "id": "qf-7",
+          "type": "mcq",
+          "prompt_en": "Does x^2 + 2x + 5 have real roots?",
+          "prompt_rw": "Ese x^2 + 2x + 5 ifite ibisubizo nyakuri?",
+          "choices": ["Yes, two", "Yes, one", "No"],
+          "answer": "No",
+          "explanation_en": "Discriminant = 4 - 20 = -16 < 0, so no real roots.",
+          "explanation_rw": "Discriminant = 4 - 20 = -16 < 0, bityo nta bisubizo nyakuri.",
+          "difficulty": 1.2,
+          "concept": "discriminant"
+        },
+        {
+          "id": "qf-8",
+          "type": "mcq",
+          "prompt_en": "Factor: x^2 - x - 6",
+          "prompt_rw": "Tandukanya: x^2 - x - 6",
+          "choices": ["(x-3)(x+2)", "(x-2)(x+3)", "(x-1)(x+6)", "(x+1)(x-6)"],
+          "answer": "(x-3)(x+2)",
+          "explanation_en": "Numbers that multiply to -6 and add to -1 are -3 and 2.",
+          "explanation_rw": "Imibare ikuba -6 kandi iteranya -1 ni -3 na 2.",
+          "difficulty": 1.1,
+          "concept": "factoring"
+        },
+        {
+          "id": "qf-9",
+          "type": "mcq",
+          "prompt_en": "If a quadratic has roots 2 and 5, what is c in x^2 + bx + c?",
+          "prompt_rw": "Niba quadratic ifite imizi 2 na 5, c muri x^2 + bx + c ni iki?",
+          "choices": ["7", "10", "-7", "-10"],
+          "answer": "10",
+          "explanation_en": "Product of roots = c = 2*5 = 10.",
+          "explanation_rw": "Umusaruro w'imizi = c = 2*5 = 10.",
+          "difficulty": 1.2,
+          "concept": "roots and coefficients"
+        },
+        {
+          "id": "qf-10",
+          "type": "mcq",
+          "prompt_en": "Complete the square: x^2 + 6x + 9 =",
+          "prompt_rw": "Uzuza kare: x^2 + 6x + 9 =",
+          "choices": ["(x+3)^2", "(x-3)^2", "(x+9)^2", "x(x+9)"],
+          "answer": "(x+3)^2",
+          "explanation_en": "x^2 + 6x + 9 is a perfect square: (x+3)^2.",
+          "explanation_rw": "x^2 + 6x + 9 ni kare yuzuye: (x+3)^2.",
+          "difficulty": 1.0,
+          "concept": "completing square"
+        }
+      ]
+    }
+  ]
+}

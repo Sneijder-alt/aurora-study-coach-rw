@@ -1,0 +1,66 @@
+﻿[
+  {
+    "id": "math-linear-1",
+    "title": "Linear Equations Basics",
+    "subject": "Mathematics",
+    "topic": "Linear Equations",
+    "language": "en",
+    "text": "A linear equation has the form ax + b = c. To solve, isolate x by reversing operations: subtract b from both sides, then divide by a. Always do the same operation to both sides."
+  },
+  {
+    "id": "math-linear-2",
+    "title": "Common Mistakes in Linear Equations",
+    "subject": "Mathematics",
+    "topic": "Linear Equations",
+    "language": "en",
+    "text": "Common mistakes: forgetting to divide all terms by the coefficient, changing signs incorrectly, or moving a term without subtracting. Keep equations balanced."
+  },
+  {
+    "id": "math-quad-1",
+    "title": "Quadratic Functions Overview",
+    "subject": "Mathematics",
+    "topic": "Quadratic Functions",
+    "language": "en",
+    "text": "A quadratic function is f(x)=ax^2+bx+c. The graph is a parabola. The vertex is at x = -b/(2a). The discriminant b^2-4ac shows the number of real solutions."
+  },
+  {
+    "id": "math-quad-2",
+    "title": "Factoring Quadratics",
+    "subject": "Mathematics",
+    "topic": "Quadratic Functions",
+    "language": "en",
+    "text": "To factor x^2+bx+c, find two numbers that multiply to c and add to b. Then write (x+m)(x+n). If not factorable, use the quadratic formula."
+  },
+  {
+    "id": "phys-kin-1",
+    "title": "Kinematics Equations",
+    "subject": "Physics",
+    "topic": "Kinematics",
+    "language": "en",
+    "text": "Key equations: v = u + at, s = ut + 1/2 at^2, v^2 = u^2 + 2as. Use consistent units. Identify known variables before solving."
+  },
+  {
+    "id": "phys-kin-2",
+    "title": "Graphs in Kinematics",
+    "subject": "Physics",
+    "topic": "Kinematics",
+    "language": "en",
+    "text": "Slope of a displacement-time graph is velocity. Slope of a velocity-time graph is acceleration. Area under velocity-time graph gives displacement."
+  },
+  {
+    "id": "phys-elec-1",
+    "title": "Ohm's Law",
+    "subject": "Physics",
+    "topic": "Electric Circuits",
+    "language": "en",
+    "text": "Ohm's Law: V = IR. Current is the rate of flow of charge. Resistance opposes current. In series circuits, resistances add. In parallel, 1/Rt = 1/R1 + 1/R2 + ..."
+  },
+  {
+    "id": "phys-elec-2",
+    "title": "Power in Circuits",
+    "subject": "Physics",
+    "topic": "Electric Circuits",
+    "language": "en",
+    "text": "Electrical power P = VI. Using Ohm's law, P = I^2 R = V^2 / R. Power is in watts."
+  }
+]

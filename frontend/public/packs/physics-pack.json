@@ -1,0 +1,269 @@
+﻿{
+  "subject": "Physics",
+  "grade": "11",
+  "language": ["en", "rw"],
+  "topics": [
+    {
+      "id": "kinematics",
+      "title_en": "Kinematics",
+      "title_rw": "Kwimuka (Kinematics)",
+      "notes_en": "Use the equations v = u + at, s = ut + 1/2 at^2, v^2 = u^2 + 2as.",
+      "notes_rw": "Koresha formula v = u + at, s = ut + 1/2 at^2, v^2 = u^2 + 2as.",
+      "misconceptions_en": "Mixing units or using the wrong equation for the unknown.",
+      "misconceptions_rw": "Kuvanga units cyangwa gukoresha formula itariyo.",
+      "questions": [
+        {
+          "id": "kn-1",
+          "type": "mcq",
+          "prompt_en": "If u=0 m/s, a=2 m/s^2, t=5 s, find v.",
+          "prompt_rw": "Niba u=0 m/s, a=2 m/s^2, t=5 s, v ni iki?",
+          "choices": ["5", "8", "10", "12"],
+          "answer": "10",
+          "explanation_en": "v = u + at = 0 + 2*5 = 10 m/s.",
+          "explanation_rw": "v = u + at = 0 + 2*5 = 10 m/s.",
+          "difficulty": 1.0,
+          "concept": "v = u + at"
+        },
+        {
+          "id": "kn-2",
+          "type": "mcq",
+          "prompt_en": "If u=3 m/s, a=2 m/s^2, t=4 s, find s.",
+          "prompt_rw": "Niba u=3 m/s, a=2 m/s^2, t=4 s, s ni iki?",
+          "choices": ["20", "24", "28", "32"],
+          "answer": "28",
+          "explanation_en": "s = ut + 1/2 at^2 = 3*4 + 1/2*2*16 = 12 + 16 = 28.",
+          "explanation_rw": "s = ut + 1/2 at^2 = 3*4 + 1/2*2*16 = 12 + 16 = 28.",
+          "difficulty": 1.2,
+          "concept": "s = ut + 1/2 at^2"
+        },
+        {
+          "id": "kn-3",
+          "type": "mcq",
+          "prompt_en": "If u=5 m/s, a=1 m/s^2, s=12 m, find v.",
+          "prompt_rw": "Niba u=5 m/s, a=1 m/s^2, s=12 m, v ni iki?",
+          "choices": ["6", "7", "8", "9"],
+          "answer": "7",
+          "explanation_en": "v^2 = u^2 + 2as = 25 + 24 = 49, so v=7.",
+          "explanation_rw": "v^2 = u^2 + 2as = 25 + 24 = 49, bityo v=7.",
+          "difficulty": 1.2,
+          "concept": "v^2 = u^2 + 2as"
+        },
+        {
+          "id": "kn-4",
+          "type": "mcq",
+          "prompt_en": "Slope of a displacement-time graph is:",
+          "prompt_rw": "Slope y'igishushanyo cya displacement-time ni: ",
+          "choices": ["Acceleration", "Velocity", "Displacement", "Time"],
+          "answer": "Velocity",
+          "explanation_en": "Slope = change in displacement / time = velocity.",
+          "explanation_rw": "Slope = impinduka ya displacement / time = velocity.",
+          "difficulty": 1.0,
+          "concept": "graphs"
+        },
+        {
+          "id": "kn-5",
+          "type": "mcq",
+          "prompt_en": "Area under a velocity-time graph gives:",
+          "prompt_rw": "Area munsi y'igishushanyo cya velocity-time igaragaza:",
+          "choices": ["Acceleration", "Displacement", "Velocity", "Time"],
+          "answer": "Displacement",
+          "explanation_en": "Area under v-t graph gives displacement.",
+          "explanation_rw": "Area munsi ya v-t graph ni displacement.",
+          "difficulty": 1.0,
+          "concept": "graphs"
+        },
+        {
+          "id": "kn-6",
+          "type": "mcq",
+          "prompt_en": "If acceleration is negative, velocity-time graph slope is:",
+          "prompt_rw": "Niba acceleration ari negative, slope ya velocity-time graph iba:",
+          "choices": ["Positive", "Negative", "Zero", "Infinite"],
+          "answer": "Negative",
+          "explanation_en": "Slope equals acceleration, so it is negative.",
+          "explanation_rw": "Slope ingana na acceleration, bityo iba negative.",
+          "difficulty": 1.0,
+          "concept": "graphs"
+        },
+        {
+          "id": "kn-7",
+          "type": "mcq",
+          "prompt_en": "Convert 72 km/h to m/s.",
+          "prompt_rw": "Hindura 72 km/h ugire m/s.",
+          "choices": ["18", "20", "22", "24"],
+          "answer": "20",
+          "explanation_en": "72 km/h = 72*1000/3600 = 20 m/s.",
+          "explanation_rw": "72 km/h = 72*1000/3600 = 20 m/s.",
+          "difficulty": 1.1,
+          "concept": "units"
+        },
+        {
+          "id": "kn-8",
+          "type": "mcq",
+          "prompt_en": "If acceleration is zero, motion is:",
+          "prompt_rw": "Niba acceleration ari zero, umuvuduko uba:",
+          "choices": ["Increasing", "Decreasing", "Constant", "Changing"],
+          "answer": "Constant",
+          "explanation_en": "No acceleration means velocity is constant.",
+          "explanation_rw": "Nta acceleration bivuze ko velocity ihoraho.",
+          "difficulty": 0.9,
+          "concept": "uniform motion"
+        },
+        {
+          "id": "kn-9",
+          "type": "mcq",
+          "prompt_en": "Average velocity equals:",
+          "prompt_rw": "Average velocity ingana na:",
+          "choices": ["Total distance / total time", "Total displacement / total time", "Speed / time", "Acceleration / time"],
+          "answer": "Total displacement / total time",
+          "explanation_en": "Average velocity uses displacement, not distance.",
+          "explanation_rw": "Average velocity ikoresha displacement, si distance.",
+          "difficulty": 1.0,
+          "concept": "definitions"
+        },
+        {
+          "id": "kn-10",
+          "type": "mcq",
+          "prompt_en": "An object is thrown up with u=10 m/s, a=-10 m/s^2. Time to stop?",
+          "prompt_rw": "Ikintu kijugunywe hejuru u=10 m/s, a=-10 m/s^2. Igihe cyo guhagarara?",
+          "choices": ["0.5 s", "1 s", "2 s", "3 s"],
+          "answer": "1 s",
+          "explanation_en": "Use v = u + at, set v=0: 0=10-10t => t=1 s.",
+          "explanation_rw": "Koresha v = u + at, v=0: 0=10-10t => t=1 s.",
+          "difficulty": 1.2,
+          "concept": "v = u + at"
+        }
+      ]
+    },
+    {
+      "id": "electric-circuits",
+      "title_en": "Electric Circuits",
+      "title_rw": "Urusobe rw'Amashanyarazi (Electric Circuits)",
+      "notes_en": "Ohm's law: V=IR. Series: R_total = R1 + R2. Parallel: 1/Rt = 1/R1 + 1/R2.",
+      "notes_rw": "Ohm's law: V=IR. Series: R_total = R1 + R2. Parallel: 1/Rt = 1/R1 + 1/R2.",
+      "misconceptions_en": "Mixing series vs parallel rules or using wrong units.",
+      "misconceptions_rw": "Kuvanga amategeko ya series na parallel cyangwa units nabi.",
+      "questions": [
+        {
+          "id": "ec-1",
+          "type": "mcq",
+          "prompt_en": "If V=12 V and R=4 ohm, find I.",
+          "prompt_rw": "Niba V=12 V na R=4 ohm, I ni iki?",
+          "choices": ["2 A", "3 A", "4 A", "6 A"],
+          "answer": "3 A",
+          "explanation_en": "I = V/R = 12/4 = 3 A.",
+          "explanation_rw": "I = V/R = 12/4 = 3 A.",
+          "difficulty": 1.0,
+          "concept": "Ohm's law"
+        },
+        {
+          "id": "ec-2",
+          "type": "mcq",
+          "prompt_en": "Two resistors 2 ohm and 3 ohm in series. Total resistance?",
+          "prompt_rw": "Resistors 2 ohm na 3 ohm muri series. Resistance yose?",
+          "choices": ["1 ohm", "5 ohm", "6 ohm", "2.5 ohm"],
+          "answer": "5 ohm",
+          "explanation_en": "Series resistances add: 2 + 3 = 5.",
+          "explanation_rw": "Series resistances zirateranywa: 2 + 3 = 5.",
+          "difficulty": 0.9,
+          "concept": "series"
+        },
+        {
+          "id": "ec-3",
+          "type": "mcq",
+          "prompt_en": "Two resistors 2 ohm and 2 ohm in parallel. Total resistance?",
+          "prompt_rw": "Resistors 2 ohm na 2 ohm muri parallel. Resistance yose?",
+          "choices": ["4 ohm", "2 ohm", "1 ohm", "0.5 ohm"],
+          "answer": "1 ohm",
+          "explanation_en": "1/Rt = 1/2 + 1/2 = 1, so Rt = 1.",
+          "explanation_rw": "1/Rt = 1/2 + 1/2 = 1, bityo Rt = 1.",
+          "difficulty": 1.1,
+          "concept": "parallel"
+        },
+        {
+          "id": "ec-4",
+          "type": "mcq",
+          "prompt_en": "If V=6 V and I=2 A, power is:",
+          "prompt_rw": "Niba V=6 V na I=2 A, power ni: ",
+          "choices": ["8 W", "10 W", "12 W", "16 W"],
+          "answer": "12 W",
+          "explanation_en": "P = VI = 6*2 = 12 W.",
+          "explanation_rw": "P = VI = 6*2 = 12 W.",
+          "difficulty": 1.0,
+          "concept": "power"
+        },
+        {
+          "id": "ec-5",
+          "type": "mcq",
+          "prompt_en": "If I=3 A and R=4 ohm, power is:",
+          "prompt_rw": "Niba I=3 A na R=4 ohm, power ni: ",
+          "choices": ["12 W", "24 W", "36 W", "48 W"],
+          "answer": "36 W",
+          "explanation_en": "P = I^2 R = 9*4 = 36 W.",
+          "explanation_rw": "P = I^2 R = 9*4 = 36 W.",
+          "difficulty": 1.2,
+          "concept": "power"
+        },
+        {
+          "id": "ec-6",
+          "type": "mcq",
+          "prompt_en": "In a series circuit, current is:",
+          "prompt_rw": "Muri series circuit, current iba: ",
+          "choices": ["Same everywhere", "Different in each part", "Zero", "Only in battery"],
+          "answer": "Same everywhere",
+          "explanation_en": "Current is the same through all components in series.",
+          "explanation_rw": "Current iba imwe mu bice byose bya series.",
+          "difficulty": 0.9,
+          "concept": "series"
+        },
+        {
+          "id": "ec-7",
+          "type": "mcq",
+          "prompt_en": "In a parallel circuit, voltage across branches is:",
+          "prompt_rw": "Muri parallel circuit, voltage ku mashami iba: ",
+          "choices": ["Same", "Different", "Zero", "Unknown"],
+          "answer": "Same",
+          "explanation_en": "Voltage is the same across each branch in parallel.",
+          "explanation_rw": "Voltage iba imwe ku ishami rya buri parallel.",
+          "difficulty": 1.0,
+          "concept": "parallel"
+        },
+        {
+          "id": "ec-8",
+          "type": "mcq",
+          "prompt_en": "If V is constant and R doubles, current will:",
+          "prompt_rw": "Niba V ihoraho kandi R ikikuba kabiri, current iza: ",
+          "choices": ["Double", "Half", "Stay same", "Become zero"],
+          "answer": "Half",
+          "explanation_en": "I = V/R, so if R doubles, I halves.",
+          "explanation_rw": "I = V/R, bityo R ikikuba kabiri, I igabanuka kabiri.",
+          "difficulty": 1.0,
+          "concept": "Ohm's law"
+        },
+        {
+          "id": "ec-9",
+          "type": "mcq",
+          "prompt_en": "Unit of resistance is:",
+          "prompt_rw": "Igipimo cya resistance ni: ",
+          "choices": ["Volt", "Ampere", "Ohm", "Watt"],
+          "answer": "Ohm",
+          "explanation_en": "Resistance is measured in ohms.",
+          "explanation_rw": "Resistance ipimwa mu ohm.",
+          "difficulty": 0.8,
+          "concept": "units"
+        },
+        {
+          "id": "ec-10",
+          "type": "mcq",
+          "prompt_en": "If V=10 V and I=2 A, resistance is:",
+          "prompt_rw": "Niba V=10 V na I=2 A, resistance ni: ",
+          "choices": ["2 ohm", "5 ohm", "10 ohm", "20 ohm"],
+          "answer": "5 ohm",
+          "explanation_en": "R = V/I = 10/2 = 5 ohm.",
+          "explanation_rw": "R = V/I = 10/2 = 5 ohm.",
+          "difficulty": 1.0,
+          "concept": "Ohm's law"
+        }
+      ]
+    }
+  ]
+}
