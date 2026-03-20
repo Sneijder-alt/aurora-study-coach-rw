@@ -4,7 +4,7 @@ import type { SRSState } from "./lib/engine";
 import { getItem, setItem } from "./lib/storage";
 import { enqueueEvent, flushQueue, getDeviceId, isOnline } from "./lib/offline";
 
-const defaultApiBase = import.meta.env.PROD ? "" : "http://localhost:8000";
+const defaultApiBase = import.meta.env.PROD ? "/api" : "http://localhost:8000";
 const API_BASE = (import.meta as any).env?.VITE_API_BASE ?? defaultApiBase;
 const STATE_KEY = "learning-state";
 

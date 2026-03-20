@@ -44,16 +44,13 @@ Backend uses a generic LLM proxy to avoid hard-coding a provider.
 If unset, the AI Tutor endpoints return a safe fallback response.
 
 ## Vercel deployment (frontend + API)
-This repo includes a `vercel.json` that deploys:
-- Frontend as a static Vite build
-- Backend as a Python serverless function at `/api`
+Deploy via Vercel UI (recommended, no CLI required):
+1. Import the GitHub repo.
+2. Build Command: `npm --prefix frontend install && npm --prefix frontend run build`
+3. Output Directory: `frontend/dist`
+4. Install Command: `npm install`
 
-Steps:
-1. Install Vercel CLI: `npm i -g vercel`
-2. From repo root: `vercel`
-3. When prompted, set the project name and scope.
-4. Add environment variables in Vercel Dashboard (Project Settings → Environment Variables):
-   - `LLM_API_URL`, `LLM_API_KEY`, `LLM_MODEL` (optional)
+The backend is exposed at `/api`, and the frontend calls `/api/...` in production.
 
 Notes:
 - The RAG index is auto-ingested at cold start (from `content/notes.json`).
