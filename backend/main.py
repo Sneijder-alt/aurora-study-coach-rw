@@ -7,6 +7,7 @@ from typing import List, Optional
 import httpx
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from rag.index import RAGIndex
@@ -21,6 +22,14 @@ CHROMA_DIR = os.getenv("AURORA_CHROMA_DIR", "/tmp/chroma_db" if IS_VERCEL else s
 
 app = FastAPI(title="Aurora Study Coach API", version="0.1.0")
 rag = RAGIndex(persist_dir=CHROMA_DIR)
+cors_origins = os.getenv("AURORA_CORS_ORIGINS", "*").split(",")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in cors_origins if o.strip()],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def init_db() -> None:
