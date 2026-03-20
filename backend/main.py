@@ -79,6 +79,12 @@ class TutorRequest(BaseModel):
     language: str = Field("en", description="en or rw")
 
 
+class GradeRequest(BaseModel):
+    question: str
+    answer: str
+    language: str = Field("en", description="en or rw")
+
+
 class TutorResponse(BaseModel):
     answer: str
     used_context: bool
@@ -288,6 +294,38 @@ async def tutor_mistake_diagnosis(payload: TutorRequest):
     response = await call_llm(messages)
     if not response:
         fallback = "I\u2019m not fully sure from the provided notes."
+        return TutorResponse(answer=fallback, used_context=bool(context.strip()))
+
+    return TutorResponse(answer=response, used_context=bool(context.strip()))
+
+
+@app.post("/tutor/grade_answer", response_model=TutorResponse)
+async def tutor_grade_answer(payload: GradeRequest):
+    context = rag.query(payload.question, 5)
+    messages = [
+        {"role": "system", "content": system_prompt(payload.language)},
+        {
+            "role": "developer",
+            "content": (
+                "CONTEXT:\n"
+                f"{context}\n\n"
+                "Task: Evaluate the student's answer. If correct, confirm and show the key steps. "
+                "If incorrect, explain the mistake and provide the correct solution briefly. "
+                "End with one short check question."
+            ),
+        },
+        {
+            "role": "user",
+            "content": f"Question:\n{payload.question}\n\nStudent answer:\n{payload.answer}",
+        },
+    ]
+
+    response = await call_llm(messages)
+    if not response:
+        fallback = (
+            "I’m not fully sure from the provided notes. "
+            "Please check with your teacher or textbook for the exact answer."
+        )
         return TutorResponse(answer=fallback, used_context=bool(context.strip()))
 
     return TutorResponse(answer=response, used_context=bool(context.strip()))

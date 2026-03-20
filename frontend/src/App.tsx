@@ -7,6 +7,7 @@ import { enqueueEvent, flushQueue, getDeviceId, isOnline } from "./lib/offline";
 const defaultApiBase = import.meta.env.PROD ? "/api" : "http://localhost:8000";
 const API_BASE = (import.meta as any).env?.VITE_API_BASE ?? defaultApiBase;
 const STATE_KEY = "learning-state";
+const WORKSPACE_KEY = "workspace-notes";
 
 type Question = {
   id: string;
@@ -58,6 +59,7 @@ export default function App() {
   const [online, setOnline] = useState(isOnline());
   const [deviceId, setDeviceId] = useState<string>("");
   const [learning, setLearning] = useState<LearningState>(initialState);
+  const [workspaceNotes, setWorkspaceNotes] = useState("");
 
   const [packIndex, setPackIndex] = useState<number | null>(null);
   const [topicId, setTopicId] = useState<string | null>(null);
@@ -68,11 +70,17 @@ export default function App() {
   const [showResults, setShowResults] = useState(false);
   const [tutorText, setTutorText] = useState<string | null>(null);
   const [tutorLoading, setTutorLoading] = useState(false);
+  const [practiceQuestion, setPracticeQuestion] = useState("");
+  const [practiceAnswer, setPracticeAnswer] = useState("");
+  const [practiceFeedback, setPracticeFeedback] = useState<string | null>(null);
+  const [practiceLoading, setPracticeLoading] = useState(false);
 
   useEffect(() => {
     const load = async () => {
       const stored = await getItem<LearningState>(STATE_KEY, initialState);
       setLearning(stored);
+      const notes = await getItem<string>(WORKSPACE_KEY, "");
+      setWorkspaceNotes(notes);
       const id = await getDeviceId();
       setDeviceId(id);
     };
@@ -92,6 +100,10 @@ export default function App() {
   useEffect(() => {
     setItem(STATE_KEY, learning).catch(() => undefined);
   }, [learning]);
+
+  useEffect(() => {
+    setItem(WORKSPACE_KEY, workspaceNotes).catch(() => undefined);
+  }, [workspaceNotes]);
 
   useEffect(() => {
     const onUp = () => setOnline(true);
@@ -235,6 +247,57 @@ export default function App() {
       setTutorText(t("Unable to reach AI tutor right now.", "Ntibishoboye kugera kuri AI tutor ubu."));
     } finally {
       setTutorLoading(false);
+    }
+  }
+
+  async function runPractice(mode: "explain" | "similar" | "grade" | "translate") {
+    const question = practiceQuestion.trim();
+    const answer = practiceAnswer.trim();
+
+    if (!question) {
+      setPracticeFeedback(t("Please enter a question first.", "Banza wandike ikibazo."));
+      return;
+    }
+    if (mode === "grade" && !answer) {
+      setPracticeFeedback(t("Please enter your answer so I can check it.", "Andika igisubizo kugira ngo kigenzurwe."));
+      return;
+    }
+    if (lowData) {
+      setPracticeFeedback(t("Low Data Mode is on. Turn it off to use AI features.", "Low Data Mode iri ON. Yifungure kugirango ukoreshe AI."));
+      return;
+    }
+    if (!online) {
+      setPracticeFeedback(t("AI Practice works when online.", "AI Practice ikorera kuri interineti."));
+      return;
+    }
+
+    setPracticeLoading(true);
+    setPracticeFeedback(null);
+
+    const endpoint =
+      mode === "explain"
+        ? "/tutor/explain"
+        : mode === "similar"
+        ? "/tutor/generate_similar"
+        : mode === "translate"
+        ? "/tutor/translate_or_explain_rw"
+        : "/tutor/grade_answer";
+
+    const payload: Record<string, string> = { question, language: lang };
+    if (mode === "grade") payload.answer = answer;
+
+    try {
+      const res = await fetch(`${API_BASE}${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      setPracticeFeedback(data.answer ?? "");
+    } catch {
+      setPracticeFeedback(t("Unable to reach AI right now.", "Ntibishoboye kugera kuri AI ubu."));
+    } finally {
+      setPracticeLoading(false);
     }
   }
 
@@ -445,6 +508,98 @@ export default function App() {
               </button>
             </>
           )}
+        </div>
+      </div>
+
+      <div className="grid grid-2" style={{ marginTop: 24 }}>
+        <div className="panel">
+          <h3 style={{ marginTop: 0 }}>{t("Practice Lab", "Aho Gukorera Imyitozo")}</h3>
+          <div className="small">
+            {t(
+              "Type any question you want to practice. Use AI for explanations or checking your answer.",
+              "Andika ikibazo icyo ari cyo cyose ushaka gukora. Koresha AI kugusobanurira cyangwa kugenzura igisubizo."
+            )}
+          </div>
+
+          <label className="small" style={{ marginTop: 12, display: "block" }}>
+            {t("Question", "Ikibazo")}
+          </label>
+          <textarea
+            className="text-area"
+            value={practiceQuestion}
+            onChange={(e) => setPracticeQuestion(e.target.value)}
+            placeholder={t("e.g. Solve 3x + 2 = 11", "urugero: Kemuye 3x + 2 = 11")}
+            rows={4}
+          />
+
+          <label className="small" style={{ marginTop: 10, display: "block" }}>
+            {t("Your Answer (optional)", "Igisubizo cyawe (si ngombwa)")}
+          </label>
+          <textarea
+            className="text-area"
+            value={practiceAnswer}
+            onChange={(e) => setPracticeAnswer(e.target.value)}
+            placeholder={t("Write your steps or final answer here.", "Andika intambwe cyangwa igisubizo hano.")}
+            rows={3}
+          />
+
+          <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", marginTop: 10 }}>
+            <button className="btn" onClick={() => runPractice("grade")} disabled={practiceLoading}>
+              {t("Check My Answer", "Genzura Igisubizo")}
+            </button>
+            <button className="btn secondary" onClick={() => runPractice("explain")} disabled={practiceLoading}>
+              {t("Explain", "Sobanura")}
+            </button>
+            <button className="btn secondary" onClick={() => runPractice("similar")} disabled={practiceLoading}>
+              {t("Similar Qs", "Ibibazo Bisa")}
+            </button>
+            <button className="btn secondary" onClick={() => runPractice("translate")} disabled={practiceLoading}>
+              {t("Explain in Kinyarwanda", "Sobanura mu Kinyarwanda")}
+            </button>
+            <button
+              className="btn warn"
+              onClick={() => {
+                setPracticeQuestion("");
+                setPracticeAnswer("");
+                setPracticeFeedback(null);
+              }}
+            >
+              {t("Clear", "Siba")}
+            </button>
+          </div>
+
+          {practiceFeedback && (
+            <div className="card" style={{ marginTop: 12 }}>
+              <strong>{t("AI Feedback", "Igisubizo cya AI")}</strong>
+              <div style={{ marginTop: 6, whiteSpace: "pre-wrap" }}>{practiceFeedback}</div>
+            </div>
+          )}
+
+          {!online && (
+            <div className="small" style={{ marginTop: 8 }}>
+              {t("AI Practice requires internet.", "AI Practice ikenera interineti.")}
+            </div>
+          )}
+        </div>
+
+        <div className="panel">
+          <h3 style={{ marginTop: 0 }}>{t("My Workpad", "Aho Kwandika Imyitozo")}</h3>
+          <div className="small">
+            {t(
+              "Use this space to write steps, formulas, or notes. It saves on this device.",
+              "Andika intambwe, formulas, cyangwa notes hano. Bibikwa kuri telefoni."
+            )}
+          </div>
+          <textarea
+            className="text-area"
+            value={workspaceNotes}
+            onChange={(e) => setWorkspaceNotes(e.target.value)}
+            placeholder={t("Write your working here...", "Andika ibikorwa byawe hano...")}
+            rows={10}
+          />
+          <div className="small" style={{ marginTop: 6 }}>
+            {t("Auto-saved locally. No internet needed.", "Birabikwa automatisch. Nta interineti ikenewe.")}
+          </div>
         </div>
       </div>
 

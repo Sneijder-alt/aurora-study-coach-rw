@@ -27,6 +27,10 @@ button, select {
   font-family: inherit;
 }
 
+textarea, input {
+  font-family: inherit;
+}
+
 .app {
   max-width: 980px;
   margin: 0 auto;
@@ -140,6 +144,16 @@ button, select {
 .choice.selected {
   border-color: rgba(34, 197, 94, 0.8);
   background: rgba(34, 197, 94, 0.1);
+}
+
+.text-area {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: var(--text);
+  resize: vertical;
 }
 
 .notice {
